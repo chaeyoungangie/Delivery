@@ -154,7 +154,7 @@ const Cart = (props) => {
     console.log(data)
     setProducts(data)
     data.map((d) => {
-      setSubtotal(subtotal+d.price)
+      setSubtotal(subtotal+(d.price*d.count))
     })
     if (subtotal > 50000) {
       setShipping(0)
@@ -175,7 +175,6 @@ const Cart = (props) => {
       temp.push({
         "count": p.count,
         "productid": p.productid,
-        "token": props.token
       })
     })
     console.log("temp : ")
@@ -187,7 +186,8 @@ const Cart = (props) => {
         'Authorization': 'Bearer ' + props.token
       },
       body: JSON.stringify ({
-        temp
+        cartorder: temp,
+        token: props.token
     })
     })
     .then(res => {

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.Delivery.dto.AuthenticationRequest;
 import com.example.Delivery.dto.CartOrderRequest;
+import com.example.Delivery.dto.CartOrderRequestWrapper;
 import com.example.Delivery.dto.CartRequest;
 import com.example.Delivery.dto.CartResponse;
 import com.example.Delivery.service.CartService;
@@ -33,7 +34,7 @@ public class CartController {
     }
 
     @PostMapping("/placeorder")
-    public ResponseEntity<String> placeorder(@RequestBody List<CartOrderRequest> request) {
+    public ResponseEntity<String> placeorder(@RequestBody CartOrderRequestWrapper request) {
         return ResponseEntity.ok(cartservice.placeorder(request));
     }
 }

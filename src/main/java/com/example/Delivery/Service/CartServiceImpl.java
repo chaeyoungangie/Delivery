@@ -9,6 +9,7 @@ import com.example.Delivery.auth.JwtService;
 import com.example.Delivery.dto.AuthenticationRequest;
 import com.example.Delivery.model.Cart;
 import com.example.Delivery.dto.CartOrderRequest;
+import com.example.Delivery.dto.CartOrderRequestWrapper;
 import com.example.Delivery.dto.CartRequest;
 import com.example.Delivery.dto.CartResponse;
 import com.example.Delivery.model.OrderEach;
@@ -84,23 +85,29 @@ public class CartServiceImpl implements CartService{
      * return(out): String
      * purpose: place an order with all products in user's cart
      */
-    public String placeorder(List<CartOrderRequest> request) {
+    public String placeorder(CartOrderRequestWrapper request) {
         // cart에서 삭제 및 order에 추가
-        // Orders o = Orders.builder().userid(request.get(0).getUserid()).build();
-        // o.setOrders_list(new ArrayList<OrderEach>());
+        List<CartOrderRequest> cartorderItems = request.getCartorder();
+        if (cartorderItems.size() > 0) {
+            var username = jwtservice.extractUsername(request.getToken());
+            var user = userrepository.findByUsername(username).orElseThrow();
+            Orders o = Orders.builder().userid(user.getId()).build();
+            o.setOrders_list(new ArrayList<OrderEach>());
 
-        // for (Cart c : request) {
-        //     OrderEach each = OrderEach.builder().count(c.getCount())
-        //                                 .imgPath(c.getProduct().getImgPath())
-        //                                 .name(c.getProduct().getName())
-        //                                 .price(c.getProduct().getPrice())
-        //                                 .build();
-        //     o.add_ordereach(each);
-        //     ordereachrepository.save(each);
-        //     cartrepository.deleteById(c.getId());
-        // }
+            for (CartOrderRequest c : cartorderItems) {
+                System.out.println(c);
+                Product p = productrepository.findById(c.getProductid());
+                OrderEach each = OrderEach.builder().count(c.getCount())
+                                            .imgPath(p.getImgPath())
+                                            .name(p.getName())
+                                            .price(p.getPrice())
+                                            .build();
+                o.add_ordereach(each);
+                ordereachrepository.save(each);
+            }
+            cartrepository.deleteByUserid(user.getId());
+        }
+       
         return "주문이 완료되었습니다";   
     }
-    
-    
 }
