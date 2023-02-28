@@ -1,16 +1,16 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.Auth.JwtService;
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.Orders;
-import com.example.Delivery.Model.OrdersResponse;
-import com.example.Delivery.Repository.OrderRepository;
-import com.example.Delivery.Repository.UsersRepository;
+import com.example.Delivery.auth.JwtService;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.model.Orders;
+import com.example.Delivery.dto.OrdersResponse;
+import com.example.Delivery.repository.OrderRepository;
+import com.example.Delivery.repository.UsersRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService{
      * return(out): List<OrdersResponse>
      * purpose: show all the products in the orders (for check)
      */
-    public List<OrdersResponse> getorder(AuthenticationResponse request) {
+    public List<OrdersResponse> getorder(AuthenticationRequest request) {
         var username = jwtservice.extractUsername(request.getToken());
         var user = userrepository.findByUsername(username).orElseThrow();  
         var userid = user.getId();

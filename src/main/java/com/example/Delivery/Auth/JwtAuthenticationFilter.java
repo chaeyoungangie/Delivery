@@ -1,4 +1,4 @@
-package com.example.Delivery.Auth;
+package com.example.Delivery.auth;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

@@ -1,8 +1,8 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import java.util.List;
 
-import com.example.Delivery.Model.ProductResponse;
+import com.example.Delivery.dto.ProductResponse;
 
 public interface ProductService {
 

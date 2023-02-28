@@ -1,4 +1,4 @@
-package com.example.Delivery.Controller;
+package com.example.Delivery.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.UserResponse;
-import com.example.Delivery.Service.UsersService;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.dto.UserResponse;
+import com.example.Delivery.service.UsersService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,7 +20,7 @@ public class UsersController {
     private final UsersService userservice;
 
     @PostMapping("/getAccount")
-    public ResponseEntity<UserResponse> getAccount(@RequestBody AuthenticationResponse request) {
+    public ResponseEntity<UserResponse> getAccount(@RequestBody AuthenticationRequest request) {
         return ResponseEntity.ok(userservice.getAccount(request));
     }
 }

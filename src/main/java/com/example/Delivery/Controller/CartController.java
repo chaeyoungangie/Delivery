@@ -1,4 +1,4 @@
-package com.example.Delivery.Controller;
+package com.example.Delivery.controller;
 
 import java.util.List;
 
@@ -8,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.Cart;
-import com.example.Delivery.Model.CartOrderRequest;
-import com.example.Delivery.Model.CartRequest;
-import com.example.Delivery.Model.CartResponse;
-import com.example.Delivery.Service.CartService;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.dto.CartOrderRequest;
+import com.example.Delivery.dto.CartRequest;
+import com.example.Delivery.dto.CartResponse;
+import com.example.Delivery.service.CartService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -29,14 +28,12 @@ public class CartController {
     }
 
     @PostMapping("/mycart")
-    public ResponseEntity<List<CartResponse>> mycart(@RequestBody AuthenticationResponse request) {
+    public ResponseEntity<List<CartResponse>> mycart(@RequestBody AuthenticationRequest request) {
         return ResponseEntity.ok(cartservice.getmycart(request));
     }
 
     @PostMapping("/placeorder")
     public ResponseEntity<String> placeorder(@RequestBody List<CartOrderRequest> request) {
-        System.out.println("placeorder in");
-        System.out.println(request);
         return ResponseEntity.ok(cartservice.placeorder(request));
     }
 }

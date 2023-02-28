@@ -1,4 +1,4 @@
-package com.example.Delivery.Controller;
+package com.example.Delivery.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.ChangeAccountRequest;
-import com.example.Delivery.Model.LoginRequest;
-import com.example.Delivery.Model.RegisterRequest;
-import com.example.Delivery.Service.AuthService;
+import com.example.Delivery.dto.AuthenticationResponse;
+import com.example.Delivery.dto.ChangeAccountRequest;
+import com.example.Delivery.dto.LoginRequest;
+import com.example.Delivery.dto.RegisterRequest;
+import com.example.Delivery.service.AuthService;
 
 import lombok.RequiredArgsConstructor;
 

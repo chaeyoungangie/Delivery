@@ -1,12 +1,12 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import java.util.List;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.OrdersResponse;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.dto.OrdersResponse;
 
 public interface OrderService {
 
-    public List<OrdersResponse> getorder(AuthenticationResponse request);
+    public List<OrdersResponse> getorder(AuthenticationRequest request);
 
 }

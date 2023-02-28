@@ -1,4 +1,4 @@
-package com.example.Delivery.Controller;
+package com.example.Delivery.controller;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.OrdersResponse;
-import com.example.Delivery.Service.OrderService;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.dto.OrdersResponse;
+import com.example.Delivery.service.OrderService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -21,7 +21,7 @@ public class OrderController {
     private final OrderService orderservice;
     
     @PostMapping("/myorder")
-    public ResponseEntity<List<OrdersResponse>> getorder(@RequestBody AuthenticationResponse request) {
+    public ResponseEntity<List<OrdersResponse>> getorder(@RequestBody AuthenticationRequest request) {
             return ResponseEntity.ok(orderservice.getorder(request));
     }
 }

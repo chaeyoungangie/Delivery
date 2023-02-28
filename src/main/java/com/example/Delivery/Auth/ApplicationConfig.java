@@ -1,4 +1,4 @@
-package com.example.Delivery.Auth;
+package com.example.Delivery.auth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,7 +11,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import com.example.Delivery.Repository.UsersRepository;
+import com.example.Delivery.repository.UsersRepository;
 
 import lombok.RequiredArgsConstructor;
 

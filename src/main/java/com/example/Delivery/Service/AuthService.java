@@ -1,9 +1,9 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.ChangeAccountRequest;
-import com.example.Delivery.Model.LoginRequest;
-import com.example.Delivery.Model.RegisterRequest;
+import com.example.Delivery.dto.AuthenticationResponse;
+import com.example.Delivery.dto.ChangeAccountRequest;
+import com.example.Delivery.dto.LoginRequest;
+import com.example.Delivery.dto.RegisterRequest;
 
 
 public interface AuthService {

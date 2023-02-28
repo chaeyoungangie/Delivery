@@ -1,10 +1,10 @@
-package com.example.Delivery.Repository;
+package com.example.Delivery.repository;
 
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.Delivery.Model.Product;
+import com.example.Delivery.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByCategoryId(int categoryId);

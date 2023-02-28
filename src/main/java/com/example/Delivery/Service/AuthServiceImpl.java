@@ -1,18 +1,18 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.Auth.JwtService;
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.ChangeAccountRequest;
-import com.example.Delivery.Model.LoginRequest;
-import com.example.Delivery.Model.RegisterRequest;
-import com.example.Delivery.Model.Role;
-import com.example.Delivery.Model.Users;
-import com.example.Delivery.Repository.UsersRepository;
+import com.example.Delivery.auth.JwtService;
+import com.example.Delivery.dto.AuthenticationResponse;
+import com.example.Delivery.dto.ChangeAccountRequest;
+import com.example.Delivery.dto.LoginRequest;
+import com.example.Delivery.dto.RegisterRequest;
+import com.example.Delivery.model.Role;
+import com.example.Delivery.model.Users;
+import com.example.Delivery.repository.UsersRepository;
 
 import lombok.RequiredArgsConstructor;
 

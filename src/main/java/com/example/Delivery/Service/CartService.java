@@ -1,17 +1,17 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import java.util.List;
 
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.CartOrderRequest;
-import com.example.Delivery.Model.CartRequest;
-import com.example.Delivery.Model.CartResponse;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.dto.CartOrderRequest;
+import com.example.Delivery.dto.CartRequest;
+import com.example.Delivery.dto.CartResponse;
 
 
 public interface CartService {
 
     public String addCart(CartRequest request);
-    public List<CartResponse> getmycart(AuthenticationResponse request);
+    public List<CartResponse> getmycart(AuthenticationRequest request);
     public String placeorder(List<CartOrderRequest> request);
 
 }

@@ -1,23 +1,23 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.Auth.JwtService;
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.Cart;
-import com.example.Delivery.Model.CartOrderRequest;
-import com.example.Delivery.Model.CartRequest;
-import com.example.Delivery.Model.CartResponse;
-import com.example.Delivery.Model.OrderEach;
-import com.example.Delivery.Model.Orders;
-import com.example.Delivery.Model.Product;
-import com.example.Delivery.Repository.CartRepository;
-import com.example.Delivery.Repository.OrderEachRepository;
-import com.example.Delivery.Repository.ProductRepository;
-import com.example.Delivery.Repository.UsersRepository;
+import com.example.Delivery.auth.JwtService;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.model.Cart;
+import com.example.Delivery.dto.CartOrderRequest;
+import com.example.Delivery.dto.CartRequest;
+import com.example.Delivery.dto.CartResponse;
+import com.example.Delivery.model.OrderEach;
+import com.example.Delivery.model.Orders;
+import com.example.Delivery.model.Product;
+import com.example.Delivery.repository.CartRepository;
+import com.example.Delivery.repository.OrderEachRepository;
+import com.example.Delivery.repository.ProductRepository;
+import com.example.Delivery.repository.UsersRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -62,7 +62,7 @@ public class CartServiceImpl implements CartService{
      * return(out): List<CartResponse>
      * purpose: show all the products in the cart(for check)
      */
-    public List<CartResponse> getmycart(AuthenticationResponse request) {
+    public List<CartResponse> getmycart(AuthenticationRequest request) {
         var token = request.getToken();
         var username = jwtservice.extractUsername(token);
         var user = userrepository.findByUsername(username).orElseThrow();

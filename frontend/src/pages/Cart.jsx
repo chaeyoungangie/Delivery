@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -153,7 +154,7 @@ const Cart = (props) => {
     console.log(data)
     setProducts(data)
     data.map((d) => {
-      setSubtotal(subtotal+d.product.price)
+      setSubtotal(subtotal+d.price)
     })
     if (subtotal > 50000) {
       setShipping(0)
@@ -217,7 +218,7 @@ const Cart = (props) => {
             { products.map((p) => (
                 <Product>
                 <ProductDetail>
-                  <Image src="https://i.pinimg.com/originals/2d/af/f8/2daff8e0823e51dd752704a47d5b795c.png" />
+                  <Image src={p.img_path} alt="image" />
                   <Details>
                     <ProductName>
                       <b>Product:</b> {p.name}

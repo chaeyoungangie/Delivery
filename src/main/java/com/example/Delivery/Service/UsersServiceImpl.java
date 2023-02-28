@@ -1,13 +1,13 @@
-package com.example.Delivery.Service;
+package com.example.Delivery.service;
 
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.Auth.JwtService;
-import com.example.Delivery.Model.AuthenticationResponse;
-import com.example.Delivery.Model.UserResponse;
-import com.example.Delivery.Repository.UsersRepository;
+import com.example.Delivery.auth.JwtService;
+import com.example.Delivery.dto.AuthenticationRequest;
+import com.example.Delivery.dto.UserResponse;
+import com.example.Delivery.repository.UsersRepository;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +20,7 @@ public class UsersServiceImpl implements UsersService {
      * return(out): UserResponse
      * purpose: show user's account info 
      */
-    public UserResponse getAccount(AuthenticationResponse request) {
+    public UserResponse getAccount(AuthenticationRequest request) {
         var token_ = request.getToken();
         var username = jwtservice.extractUsername(token_);
         var user = userrepository.findByUsername(username).orElseThrow();

@@ -1,3 +1,4 @@
+import React from 'react'
 import { useLocation } from 'react-router-dom';
 import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
@@ -123,14 +124,14 @@ const SingleProduct = (props) => {
             <Announcement />
             <Wrapper>
                 <ImgContainer>
-                <Image src={item.imgPath} />
+                <Image src={ item.imgPath } />
                 </ImgContainer>
                 <InfoContainer>
                 <Title>{item.name}</Title>
                 <Desc>
                     {/* description */}
                 </Desc>
-                <Price> {item.price}원 </Price>
+                <Price> { item.price }원 </Price>
 
                 <AddContainer>
                     <AmountContainer>
@@ -142,7 +143,7 @@ const SingleProduct = (props) => {
                 </AddContainer>
                 </InfoContainer>
             </Wrapper>
-            <Review />
+            {/* <Review /> */}
             <Footer />
         </Container>
   );
