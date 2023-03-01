@@ -1,4 +1,5 @@
-# ggogi
+# GGOGI
+다이어트인들을 위한 배달 서비스
 spring boot &amp; react
 
 프로젝트 문서
