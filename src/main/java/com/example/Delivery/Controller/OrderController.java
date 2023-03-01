@@ -21,7 +21,7 @@ public class OrderController {
     private final OrderService orderservice;
     
     @PostMapping("/myorder")
-    public ResponseEntity<List<OrdersResponse>> getorder(@RequestBody AuthenticationRequest request) {
-            return ResponseEntity.ok(orderservice.getorder(request));
+    public ResponseEntity<List<OrdersResponse>> myOrder(@RequestBody AuthenticationRequest request) {
+            return ResponseEntity.ok(orderservice.myOrder(request));
     }
 }

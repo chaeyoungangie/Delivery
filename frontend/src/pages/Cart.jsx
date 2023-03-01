@@ -138,29 +138,41 @@ const Cart = (props) => {
   const [shippingdiscount, setShippingdiscount] = useState(0);
   const [total, setTotal] = useState(0);
 
-  const handleFetchData = async () => {
-    const response = await 
-      fetch("/api/v1/cart/mycart", {
-        method: "POST",
-        headers: {
-          'Content-type': 'application/json',
-          'Authorization': 'Bearer ' + props.token
-        },
-        body: JSON.stringify ({
-          token: props.token
-      })
-      });
-    const data = await response.json()
-    console.log(data)
-    setProducts(data)
-    data.map((d) => {
-      setSubtotal(subtotal+(d.price*d.count))
+  const handleFetchData = () => {
+    fetch("/api/v1/cart/mycart", {
+      method: "POST",
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': 'Bearer ' + props.token
+      },
+      body: JSON.stringify ({
+        token: props.token
     })
-    if (subtotal > 50000) {
-      setShipping(0)
-      setShippingdiscount(3500)
-    }
-    setTotal(subtotal+shipping)
+    })
+    .then(res=>res.json())
+    .then(res => {
+      console.log("handle");
+      console.log(res)
+      setProducts(res)
+      console.log(products)
+      res.map((d) => {
+        console.log(d)
+        console.log(subtotal)
+        setSubtotal(subtotal+(d.price*d.count))
+      })
+      if (subtotal > 50000) {
+        setShipping(0)
+        setShippingdiscount(3500)
+      }
+      console.log("total")
+      console.log(total)
+      setTotal(subtotal+shipping)
+      console.log(total)
+    })
+    .then( () => {
+      console.log("then")
+      console.log(products)
+    })
   }
 
   useEffect(() => {

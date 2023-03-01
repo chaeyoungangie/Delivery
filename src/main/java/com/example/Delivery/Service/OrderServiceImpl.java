@@ -26,7 +26,7 @@ public class OrderServiceImpl implements OrderService{
      * return(out): List<OrdersResponse>
      * purpose: show all the products in the orders (for check)
      */
-    public List<OrdersResponse> getorder(AuthenticationRequest request) {
+    public List<OrdersResponse> myOrder(AuthenticationRequest request) {
         var username = jwtservice.extractUsername(request.getToken());
         var user = userrepository.findByUsername(username).orElseThrow();  
         var userid = user.getId();

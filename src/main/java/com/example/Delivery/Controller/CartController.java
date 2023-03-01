@@ -28,12 +28,12 @@ public class CartController {
     }
 
     @PostMapping("/mycart")
-    public ResponseEntity<List<CartResponse>> mycart(@RequestBody AuthenticationRequest request) {
-        return ResponseEntity.ok(cartservice.getmycart(request));
+    public ResponseEntity<List<CartResponse>> myCart(@RequestBody AuthenticationRequest request) {
+        return ResponseEntity.ok(cartservice.myCart(request));
     }
 
     @PostMapping("/placeorder")
-    public ResponseEntity<String> placeorder(@RequestBody CartOrderRequestWrapper request) {
-        return ResponseEntity.ok(cartservice.placeorder(request));
+    public ResponseEntity<String> placeOrder(@RequestBody CartOrderRequestWrapper request) {
+        return ResponseEntity.ok(cartservice.placeOrder(request));
     }
 }

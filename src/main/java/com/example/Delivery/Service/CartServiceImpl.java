@@ -63,7 +63,7 @@ public class CartServiceImpl implements CartService{
      * return(out): List<CartResponse>
      * purpose: show all the products in the cart(for check)
      */
-    public List<CartResponse> getmycart(AuthenticationRequest request) {
+    public List<CartResponse> myCart(AuthenticationRequest request) {
         var token = request.getToken();
         var username = jwtservice.extractUsername(token);
         var user = userrepository.findByUsername(username).orElseThrow();
@@ -85,7 +85,7 @@ public class CartServiceImpl implements CartService{
      * return(out): String
      * purpose: place an order with all products in user's cart
      */
-    public String placeorder(CartOrderRequestWrapper request) {
+    public String placeOrder(CartOrderRequestWrapper request) {
         // cart에서 삭제 및 order에 추가
         List<CartOrderRequest> cartorderItems = request.getCartorder();
         if (cartorderItems.size() > 0) {

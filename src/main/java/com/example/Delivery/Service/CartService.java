@@ -11,7 +11,7 @@ import com.example.Delivery.dto.CartResponse;
 public interface CartService {
 
     public String addCart(CartRequest request);
-    public List<CartResponse> getmycart(AuthenticationRequest request);
-    public String placeorder(CartOrderRequestWrapper request);
+    public List<CartResponse> myCart(AuthenticationRequest request);
+    public String placeOrder(CartOrderRequestWrapper request);
 
 }

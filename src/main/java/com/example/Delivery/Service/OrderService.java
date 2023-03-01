@@ -7,6 +7,6 @@ import com.example.Delivery.dto.OrdersResponse;
 
 public interface OrderService {
 
-    public List<OrdersResponse> getorder(AuthenticationRequest request);
+    public List<OrdersResponse> myOrder(AuthenticationRequest request);
 
 }
