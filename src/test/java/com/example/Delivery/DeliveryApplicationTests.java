@@ -35,27 +35,28 @@ class DeliveryApplicationTests {
 	@Autowired OrderRepository orderrepository;
 
 
-	// @Test
-	// void userservice_test() {
-	// 	AuthenticationResponse req = AuthenticationResponse.builder().token(token_).build();
-	// 	System.out.println("userservice test in");
+	@Test
+	void userservice_test() {
+		var token = "ss";
+		AuthenticationResponse req = AuthenticationResponse.builder().token(token).build();
+		System.out.println("userservice test in");
 
-	// 	UserResponse user = userservice.getAccount(req);
-	// 	System.out.println(user);
-	// 	assertThat(user.getUsername()).isEqualTo("user");
-	// 	assertThat(user.getFirstname()).isEqualTo("firstname");
-	// 	assertThat(user.getLastname()).isEqualTo("lastname");
-	// }
+		// UserResponse user = userservice.getAccount(req);
+		// System.out.println(user);
+		// assertThat(user.getUsername()).isEqualTo("user");
+		// assertThat(user.getFirstname()).isEqualTo("firstname");
+		// assertThat(user.getLastname()).isEqualTo("lastname");
+	}
 
 	
-	// @Test
-	// void placeordertest() {
-	// 	// var p = Product;
-	// 	List<Cart> cart_list = new ArrayList<Cart>();
-	// 	Cart c = Cart.builder().id(8).count(3).userid(1).build();
-	// 	cart_list.add(c);
-	// 	cartservice.placeorder(cart_list);
-	// }
+	@Test
+	void placeordertest() {
+		// var p = Product;
+		List<Cart> cart_list = new ArrayList<Cart>();
+		Cart c = Cart.builder().id(8).count(3).userid(1).build();
+		cart_list.add(c);
+		// cartservice.placeorder(cart_list);
+	}
 
 	@Test
 	void getordertest() {

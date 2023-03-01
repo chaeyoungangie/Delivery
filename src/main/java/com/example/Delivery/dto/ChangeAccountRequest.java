@@ -1,14 +1,8 @@
 package com.example.Delivery.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
 public class ChangeAccountRequest {
     private String firstname;
     private String lastname;

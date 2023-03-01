@@ -1,14 +1,8 @@
 package com.example.Delivery.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-@Data
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
 public class RegisterRequest {
     private String firstname;
     private String lastname;

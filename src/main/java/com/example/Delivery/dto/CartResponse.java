@@ -2,13 +2,11 @@ package com.example.Delivery.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
 
-@Data
-@Builder
-@NoArgsConstructor
+@Getter
 @AllArgsConstructor
+@Builder
 public class CartResponse {
     private int count;
     private int productid;

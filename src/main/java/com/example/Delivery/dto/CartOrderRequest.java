@@ -1,8 +1,8 @@
 package com.example.Delivery.dto;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 public class CartOrderRequest {
     private int productid;
     private int count;
