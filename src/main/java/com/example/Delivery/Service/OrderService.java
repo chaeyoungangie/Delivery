@@ -1,16 +1,16 @@
-package com.example.Delivery.service;
+package com.example.delivery.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.auth.JwtService;
-import com.example.Delivery.dto.AuthenticationRequest;
-import com.example.Delivery.model.Orders;
-import com.example.Delivery.dto.OrdersResponse;
-import com.example.Delivery.repository.OrderRepository;
-import com.example.Delivery.repository.UsersRepository;
+import com.example.delivery.auth.JwtService;
+import com.example.delivery.dto.AuthenticationRequest;
+import com.example.delivery.dto.OrdersResponse;
+import com.example.delivery.model.Orders;
+import com.example.delivery.repository.OrderRepository;
+import com.example.delivery.repository.UsersRepository;
 
 import lombok.RequiredArgsConstructor;
 

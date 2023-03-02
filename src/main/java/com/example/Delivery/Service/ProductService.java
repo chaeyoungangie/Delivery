@@ -1,13 +1,13 @@
-package com.example.Delivery.service;
+package com.example.delivery.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.model.Product;
-import com.example.Delivery.dto.ProductResponse;
-import com.example.Delivery.repository.ProductRepository;
+import com.example.delivery.dto.ProductResponse;
+import com.example.delivery.model.Product;
+import com.example.delivery.repository.ProductRepository;
 
 import lombok.RequiredArgsConstructor;
 

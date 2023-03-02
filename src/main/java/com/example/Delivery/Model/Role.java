@@ -1,4 +1,4 @@
-package com.example.Delivery.model;
+package com.example.delivery.model;
 
 public enum Role {
     USER,

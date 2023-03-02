@@ -1,8 +1,8 @@
-package com.example.Delivery.dto;
+package com.example.delivery.dto;
 
 import java.util.List;
 
-import com.example.Delivery.model.OrderEach;
+import com.example.delivery.model.OrderEach;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,24 +1,24 @@
-package com.example.Delivery.service;
+package com.example.delivery.service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.auth.JwtService;
-import com.example.Delivery.dto.AuthenticationRequest;
-import com.example.Delivery.model.Cart;
-import com.example.Delivery.dto.CartOrderRequest;
-import com.example.Delivery.dto.CartOrderRequestWrapper;
-import com.example.Delivery.dto.CartRequest;
-import com.example.Delivery.dto.CartResponse;
-import com.example.Delivery.model.OrderEach;
-import com.example.Delivery.model.Orders;
-import com.example.Delivery.model.Product;
-import com.example.Delivery.repository.CartRepository;
-import com.example.Delivery.repository.OrderEachRepository;
-import com.example.Delivery.repository.ProductRepository;
-import com.example.Delivery.repository.UsersRepository;
+import com.example.delivery.auth.JwtService;
+import com.example.delivery.dto.AuthenticationRequest;
+import com.example.delivery.dto.CartOrderRequest;
+import com.example.delivery.dto.CartOrderRequestWrapper;
+import com.example.delivery.dto.CartRequest;
+import com.example.delivery.dto.CartResponse;
+import com.example.delivery.model.Cart;
+import com.example.delivery.model.OrderEach;
+import com.example.delivery.model.Orders;
+import com.example.delivery.model.Product;
+import com.example.delivery.repository.CartRepository;
+import com.example.delivery.repository.OrderEachRepository;
+import com.example.delivery.repository.ProductRepository;
+import com.example.delivery.repository.UsersRepository;
 
 import lombok.RequiredArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.example.Delivery.controller;
+package com.example.delivery.controller;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.dto.AuthenticationRequest;
-import com.example.Delivery.dto.OrdersResponse;
-import com.example.Delivery.service.OrderService;
+import com.example.delivery.dto.AuthenticationRequest;
+import com.example.delivery.dto.OrdersResponse;
+import com.example.delivery.service.OrderService;
 
 import lombok.RequiredArgsConstructor;
 

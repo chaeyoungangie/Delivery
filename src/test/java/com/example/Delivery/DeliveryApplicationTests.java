@@ -8,20 +8,20 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.Delivery.auth.JwtService;
-import com.example.Delivery.dto.AuthenticationResponse;
-import com.example.Delivery.model.Cart;
-import com.example.Delivery.dto.CartResponse;
-import com.example.Delivery.model.Orders;
-import com.example.Delivery.model.Product;
-import com.example.Delivery.model.Users;
-import com.example.Delivery.repository.CartRepository;
-import com.example.Delivery.repository.OrderRepository;
-import com.example.Delivery.repository.ProductRepository;
-import com.example.Delivery.repository.UsersRepository;
-import com.example.Delivery.service.CartService;
-import com.example.Delivery.service.ProductService;
-import com.example.Delivery.service.UsersService;
+import com.example.delivery.auth.JwtService;
+import com.example.delivery.dto.AuthenticationResponse;
+import com.example.delivery.dto.CartResponse;
+import com.example.delivery.model.Cart;
+import com.example.delivery.model.Orders;
+import com.example.delivery.model.Product;
+import com.example.delivery.model.Users;
+import com.example.delivery.repository.CartRepository;
+import com.example.delivery.repository.OrderRepository;
+import com.example.delivery.repository.ProductRepository;
+import com.example.delivery.repository.UsersRepository;
+import com.example.delivery.service.CartService;
+import com.example.delivery.service.ProductService;
+import com.example.delivery.service.UsersService;
 
 @SpringBootTest
 class DeliveryApplicationTests {

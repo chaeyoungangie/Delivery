@@ -1,4 +1,4 @@
-package com.example.Delivery.auth;
+package com.example.delivery.auth;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

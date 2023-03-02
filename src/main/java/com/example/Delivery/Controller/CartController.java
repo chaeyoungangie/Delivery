@@ -1,4 +1,4 @@
-package com.example.Delivery.controller;
+package com.example.delivery.controller;
 
 import java.util.List;
 
@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.dto.AuthenticationRequest;
-import com.example.Delivery.dto.CartOrderRequestWrapper;
-import com.example.Delivery.dto.CartRequest;
-import com.example.Delivery.dto.CartResponse;
-import com.example.Delivery.service.CartService;
+import com.example.delivery.dto.AuthenticationRequest;
+import com.example.delivery.dto.CartOrderRequestWrapper;
+import com.example.delivery.dto.CartRequest;
+import com.example.delivery.dto.CartResponse;
+import com.example.delivery.service.CartService;
 
 import lombok.RequiredArgsConstructor;
 

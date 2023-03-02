@@ -1,4 +1,4 @@
-package com.example.Delivery.controller;
+package com.example.delivery.controller;
 
 import java.util.List;
 import java.util.Map;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.Delivery.dto.ProductResponse;
-import com.example.Delivery.service.ProductService;
+import com.example.delivery.dto.ProductResponse;
+import com.example.delivery.service.ProductService;
 
 import lombok.RequiredArgsConstructor;
 

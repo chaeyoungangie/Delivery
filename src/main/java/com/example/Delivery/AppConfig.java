@@ -1,4 +1,4 @@
-package com.example.Delivery;
+package com.example.delivery;
 
 import org.springframework.context.annotation.Configuration;
 

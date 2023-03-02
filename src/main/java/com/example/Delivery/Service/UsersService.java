@@ -1,13 +1,13 @@
-package com.example.Delivery.service;
+package com.example.delivery.service;
 
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.stereotype.Service;
 
-import com.example.Delivery.auth.JwtService;
-import com.example.Delivery.dto.AuthenticationRequest;
-import com.example.Delivery.dto.UserResponse;
-import com.example.Delivery.repository.UsersRepository;
+import com.example.delivery.auth.JwtService;
+import com.example.delivery.dto.AuthenticationRequest;
+import com.example.delivery.dto.UserResponse;
+import com.example.delivery.repository.UsersRepository;
 
 @Service
 @RequiredArgsConstructor

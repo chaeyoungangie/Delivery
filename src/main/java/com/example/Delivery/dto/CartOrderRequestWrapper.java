@@ -1,4 +1,4 @@
-package com.example.Delivery.dto;
+package com.example.delivery.dto;
 
 import java.util.List;
 
