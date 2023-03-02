@@ -23,17 +23,17 @@ public class CartController {
     private final CartService cartservice;
 
     @PostMapping("/add")
-    public ResponseEntity<String> addCart(@RequestBody CartRequest request) {
-        return ResponseEntity.ok(cartservice.addCart(request));
+    public String addCart(@RequestBody CartRequest request) {
+        return cartservice.addCart(request);
     }
 
     @PostMapping("/mycart")
-    public ResponseEntity<List<CartResponse>> myCart(@RequestBody AuthenticationRequest request) {
-        return ResponseEntity.ok(cartservice.myCart(request));
+    public List<CartResponse> myCart(@RequestBody AuthenticationRequest request) {
+        return cartservice.myCart(request);
     }
 
     @PostMapping("/placeorder")
-    public ResponseEntity<String> placeOrder(@RequestBody CartOrderRequestWrapper request) {
-        return ResponseEntity.ok(cartservice.placeOrder(request));
+    public String placeOrder(@RequestBody CartOrderRequestWrapper request) {
+        return cartservice.placeOrder(request);
     }
 }

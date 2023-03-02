@@ -28,7 +28,7 @@ public class ProductController {
     } 
 
     @PostMapping("/findByCategoryId")
-    public ResponseEntity<List<ProductResponse>> findByCategoryId(@RequestBody Map<String, Integer> category) {
-        return ResponseEntity.ok(productService.findByCategoryId(category.get("categoryid")));
+    public List<ProductResponse> findByCategoryId(@RequestBody Map<String, Integer> category) {
+        return productService.findByCategoryId(category.get("categoryid"));
     } 
 }

@@ -20,7 +20,7 @@ public class UsersController {
     private final UsersService userservice;
 
     @PostMapping("/getAccount")
-    public ResponseEntity<UserResponse> getAccount(@RequestBody AuthenticationRequest request) {
-        return ResponseEntity.ok(userservice.getAccount(request));
+    public UserResponse getAccount(@RequestBody AuthenticationRequest request) {
+        return userservice.getAccount(request);
     }
 }
