@@ -39,13 +39,12 @@ class DeliveryApplicationTests {
 	void userservice_test() {
 		var token = "ss";
 		AuthenticationResponse req = AuthenticationResponse.builder().token(token).build();
-		System.out.println("userservice test in");
 
-		// UserResponse user = userservice.getAccount(req);
-		// System.out.println(user);
-		// assertThat(user.getUsername()).isEqualTo("user");
-		// assertThat(user.getFirstname()).isEqualTo("firstname");
-		// assertThat(user.getLastname()).isEqualTo("lastname");
+		var username = jwtservice.extractUsername(req.getToken());
+        var user = userrepository.findByUsername(username).orElseThrow();    
+		assertThat(user.getUsername()).isEqualTo("user");
+		assertThat(user.getFirstname()).isEqualTo("firstname");
+		assertThat(user.getLastname()).isEqualTo("lastname");
 	}
 
 	
@@ -62,7 +61,7 @@ class DeliveryApplicationTests {
 	void getordertest() {
 		List<Orders> myorder = orderrepository.findByUserid(1);
 		System.out.println(myorder);
-		// assertThat(mycar).isEqualTo(2);
+		assertThat(myorder.size()).isEqualTo(2);
 
 	}
 

@@ -10,7 +10,6 @@ import com.example.Delivery.model.Cart;
 
 public interface CartRepository extends JpaRepository<Cart, Integer> {
     List<Cart> findByUserid(int userid);
-    
     @Transactional
     int deleteByUserid(int userid);
     
