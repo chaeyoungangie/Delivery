@@ -41,10 +41,6 @@ public class CartService{
         var username = jwtservice.extractUsername(request.getToken());
         var user = userrepository.findByUsername(username).orElseThrow();
         Product p = productrepository.findById(request.getProductid());
-        System.out.println(p.getId());
-        System.out.println(p.getName());
-        System.out.println(p.getPrice());
-        System.out.println(p.getImgPath());
 
         var cart = Cart.builder()
                         .userid(user.getId())
