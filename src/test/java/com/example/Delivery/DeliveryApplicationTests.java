@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.example.delivery.auth.JwtService;
 import com.example.delivery.dto.AuthenticationResponse;
@@ -33,18 +35,28 @@ class DeliveryApplicationTests {
 	@Autowired JwtService jwtservice;
 	@Autowired UsersRepository userrepository;
 	@Autowired OrderRepository orderrepository;
+	@Autowired PasswordEncoder passencoder;
 
+	// To-Do list
+	// 각 controller 마다 테스트 파일 하나씩 만들고 각 method 마다 유닛테스트하기
+	// 유닛테스트 찾아보기
+	// 테스트 코드 작성 전에 edge case가 뭐가 있을지 고민해보기
 
 	@Test
-	void userservice_test() {
-		var token = "ss";
-		AuthenticationResponse req = AuthenticationResponse.builder().token(token).build();
+	void registerTest() {
+		// case: username은 중복불가: 이거 처리 아직 안해줌 - 추가하기
+		var user1 = Users.builder().firstname("first")
+									.lastname("last")
+									.email("email@gmail.com")
+									.password(passencoder.encode("password"))
+									.username("user").build();
 
-		var username = jwtservice.extractUsername(req.getToken());
-        var user = userrepository.findByUsername(username).orElseThrow();    
-		assertThat(user.getUsername()).isEqualTo("user");
-		assertThat(user.getFirstname()).isEqualTo("firstname");
-		assertThat(user.getLastname()).isEqualTo("lastname");
+		userrepository.save(user1);
+		var user2 = userrepository.findByUsername("user");
+	 
+		assertThat(user1.getUsername()).isEqualTo(user2.get().getUsername());
+		assertThat(user1.getFirstname()).isEqualTo(user2.get().getFirstname());
+		assertThat(user1.getLastname()).isEqualTo(user2.get().getLastname());
 	}
 
 	
@@ -60,7 +72,6 @@ class DeliveryApplicationTests {
 	@Test
 	void getordertest() {
 		List<Orders> myorder = orderrepository.findByUserid(1);
-		System.out.println(myorder);
 		assertThat(myorder.size()).isEqualTo(2);
 
 	}
